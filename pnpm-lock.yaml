@@ -5,6 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@conform-to/react':
+    specifier: ^1.0.5
+    version: 1.0.5(react@18.2.0)
+  '@conform-to/zod':
+    specifier: ^1.0.5
+    version: 1.0.5(zod@3.22.4)
   '@remix-run/node':
     specifier: ^2.8.1
     version: 2.8.1(typescript@5.4.3)
@@ -23,6 +29,9 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
+  zod:
+    specifier: ^3.22.4
+    version: 3.22.4
 
 devDependencies:
   '@remix-run/dev':
@@ -413,6 +422,28 @@ packages:
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
     dev: true
+
+  /@conform-to/dom@1.0.5:
+    resolution: {integrity: sha512-d+85Z8w5z8gO5mtHGKP5JORHLmcgo2bTmdzRk8lhqUkye9hyM2nt801wE6C6U9zq/s7rnlX7kN5x0A6QBhvk3A==}
+    dev: false
+
+  /@conform-to/react@1.0.5(react@18.2.0):
+    resolution: {integrity: sha512-LyhbN0oVoL7xQg8NXoeG7jqH9JCLsI10clQ0iwwdQDMA+W7OFAL70FFYjq7yjHJBrkj7QqcmO5xMV4jfWTvJJw==}
+    peerDependencies:
+      react: '>=18'
+    dependencies:
+      '@conform-to/dom': 1.0.5
+      react: 18.2.0
+    dev: false
+
+  /@conform-to/zod@1.0.5(zod@3.22.4):
+    resolution: {integrity: sha512-rtz+gsRecCbY4hPC7AfBEknFWpvSMGYrQ+0AKH+jB3lzpxz/2ib5LSFLGTXg4/FVCBOhbgOxy/zmYixaf6Q1xQ==}
+    peerDependencies:
+      zod: ^3.21.0
+    dependencies:
+      '@conform-to/dom': 1.0.5
+      zod: 3.22.4
+    dev: false
 
   /@emotion/hash@0.9.1:
     resolution: {integrity: sha512-gJB6HLm5rYwSLI6PQa+X1t5CFGrv1J1TWG+sOyMCeKz2ojaj6Fnl/rZEspogG+cvqbt4AE/2eIyD2QfLKTBNlQ==}
@@ -6210,6 +6241,10 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zod@3.22.4:
+    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
+    dev: false
 
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
