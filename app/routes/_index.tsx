@@ -17,7 +17,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
   const cookieHeader = request.headers.get("Cookie");
   const cookie = (await userPrefs.parse(cookieHeader)) || {};
 
-  return json({ portfolio: cookie.shares * 30 });
+  return json({ portfolio: cookie.shares * 30.13 });
 }
 
 export default function Index() {
