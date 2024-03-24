@@ -48,15 +48,27 @@ export default function Settings() {
     },
   });
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Settings</h1>
-      <form method="post" {...getFormProps(form)}>
+    <div className="text-gray-300 h-screen flex flex-col justify-center items-center gap-2">
+      <form
+        method="post"
+        {...getFormProps(form)}
+        className="flex flex-col gap-2"
+      >
         <label>
           # Shares Of XEQT
-          <input type="text" name="shares" defaultValue={defaultShares} />
+          <div>
+            <input
+              type="text"
+              name="shares"
+              defaultValue={defaultShares}
+              className="bg-gray-900"
+            />
+          </div>
         </label>
         {shares.errors && <span>{shares.errors}</span>}
-        <button type="submit">Save</button>
+        <button type="submit" className="border p-1 rounded">
+          Save
+        </button>
       </form>
     </div>
   );
