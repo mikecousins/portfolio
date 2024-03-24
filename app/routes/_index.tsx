@@ -1,3 +1,4 @@
+import { CogIcon } from "@heroicons/react/24/outline";
 import {
   json,
   redirect,
@@ -32,15 +33,32 @@ export async function loader({ request }: LoaderFunctionArgs) {
   const rawPrice = priceElement.substring(35, 40);
   const price = Number(rawPrice);
 
-  return json({ portfolio: cookie.shares * price });
+  return json({ total: cookie.shares * price, price, quantity: cookie.shares });
 }
 
 export default function Index() {
-  const { portfolio } = useLoaderData<typeof loader>();
+  const { total, price, quantity } = useLoaderData<typeof loader>();
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>${portfolio ?? "NaN"}</h1>
-      <Link to="/settings">Settings</Link>
+    <div className="h-screen text-gray-700 flex flex-col justify-center items-center gap-x-2">
+      <div className="text-lime-500 text-4xl font-bold">
+        {new Intl.NumberFormat("en-CA", {
+          style: "currency",
+          currency: "CAD",
+        }).format(total)}
+      </div>
+      <div className="italic">
+        (
+        {new Intl.NumberFormat("en-CA", {
+          style: "currency",
+          currency: "CAD",
+        }).format(price)}{" "}
+        x {quantity})
+      </div>
+      <div>
+        <Link to="/settings">
+          <CogIcon className="h-4 w-4 text-gray-800" />
+        </Link>
+      </div>
     </div>
   );
 }
