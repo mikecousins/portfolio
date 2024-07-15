@@ -6,7 +6,7 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
-import '~/tailwind.css';
+import "~/tailwind.css";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -16,6 +16,21 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                window.counterscale = {
+                  q: [["set", "siteId", "xeqt"], ["trackPageview"]],
+                };
+            })();`,
+          }}
+        />
+        <script
+          id="counterscale-script"
+          src="https://counterscale.cousins.ai/tracker.js"
+          defer
+        ></script>
       </head>
       <body className="bg-gray-950">
         {children}
